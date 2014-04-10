@@ -1,12 +1,12 @@
 {
   "name": "PMUI",
-  "description": "This extension adds an email button to the toolbar which allows you to email the page link using your default mail client or Gmail.",
-  "version": "1.2.7",
+  "description": "Testing extension Chrome",
+  "version": "1.0",
   "background": {
     "scripts": ["background.js"]
   },
   "icons": { "128": "mail_128x128.png" },
-  "options_page": "options.html",
+  //"options_page": "options.html",
   "permissions": [
     "tabs", "http://*/*", "https://*/*"
   ],
@@ -17,7 +17,7 @@
   "manifest_version": 2,
   "content_scripts": [
     {
-        "matches": ["https://*.google.com/*"],
+        "matches": ["https://mail.google.com/*"],
         "css": [
             "lib/jQueryUI/jquery-ui-1.10.3.custom.css",
             "lib/PMUI/css/pmui-0.1.1.min.css"
@@ -26,11 +26,32 @@
             "lib/jQueryUI/jquery-1.9.1.js",
             "lib/jQueryUI/jquery-ui-1.10.3.custom.min.js",
             "lib/PMUI/js/pmui-0.1.1.js",
-            "gmail.js",
-            "gmail_ui.js",
-            "signal.js",
-            "controllers/app.js"     
+            "lib/gmail.js",
+            "lib/gmail_ui.js",
+            "lib/signal.js",
+            "controllers/app.js"
         ]
     }
-  ]
+  ],
+    "web_accessible_resources": [
+        "lib/jQueryUI/images/ui-bg_glass_85_dfeffc_1x400.png",
+        "lib/jQueryUI/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png",
+        "lib/jQueryUI/images/ui-icons_6da8d5_256x240.png",
+        "lib/PMUI/img/ar_01.gif",
+        "lib/PMUI/img/arrow-down.png",
+        "lib/PMUI/img/arrow-up.png",
+        "lib/PMUI/img/bg_dd.png",
+        "lib/PMUI/img/casa.pngf",
+        "lib/PMUI/img/elbow.gif",
+        "lib/PMUI/img/elbow-end.gif",
+        "lib/PMUI/img/elbow-line.gif",
+        "lib/PMUI/img/elbow-minus.gif",
+        "lib/PMUI/img/elbow-minus-nl.gif",
+        "lib/PMUI/img/elbow-plus.gif",
+        "lib/PMUI/img/folder.gif",
+        "lib/PMUI/img/folder-open.gif",
+        "lib/PMUI/img/leaf.gif",
+        "lib/PMUI/img/menuParent.gif",
+        "lib/PMUI/img/pmui-sprite-se1c334f11c.png"
+    ]
 }
