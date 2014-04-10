@@ -1,0 +1,36 @@
+{
+  "name": "PMUI",
+  "description": "This extension adds an email button to the toolbar which allows you to email the page link using your default mail client or Gmail.",
+  "version": "1.2.7",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "icons": { "128": "mail_128x128.png" },
+  "options_page": "options.html",
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ],
+  "browser_action": {
+    "default_title": "Email this page",
+    "default_icon": "email_16x16.png"
+  },
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+        "matches": ["https://*.google.com/*"],
+        "css": [
+            "lib/jQueryUI/jquery-ui-1.10.3.custom.css",
+            "lib/PMUI/css/pmui-0.1.1.min.css"
+        ],
+        "js": [
+            "lib/jQueryUI/jquery-1.9.1.js",
+            "lib/jQueryUI/jquery-ui-1.10.3.custom.min.js",
+            "lib/PMUI/js/pmui-0.1.1.js",
+            "gmail.js",
+            "gmail_ui.js",
+            "signal.js",
+            "controllers/app.js"     
+        ]
+    }
+  ]
+}
